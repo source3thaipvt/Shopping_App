@@ -9,11 +9,14 @@
 import React, {FC} from 'react';
 import type {ReactNode} from 'react';
 import {
+  Alert,
+  Button,
   SafeAreaView,
   ScrollView,
   StatusBar,
   StyleSheet,
   Text,
+  TouchableOpacity,
   useColorScheme,
   View,
 } from 'react-native';
@@ -29,6 +32,7 @@ interface Props {
   children: any;
   title: any;
 }
+import SplashScreen from './screens/SplashScreen';
 
 const App: () => ReactNode = () => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -38,7 +42,9 @@ const App: () => ReactNode = () => {
       ? Colors.darker
       : Colors.lighter,
   };
-
+  const showAlert = () => {
+    Alert.alert('You show alert', 'Day la show stirng');
+  };
   return (
     <SafeAreaView style={backgroundStyle}>
       <StatusBar
@@ -49,14 +55,12 @@ const App: () => ReactNode = () => {
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode
-              ? Colors.black
-              : Colors.white,
-          }}>
-          <LearnMoreLinks />
+        <View style={[styles.container, backgroundStyle]}>
+          <SplashScreen />
+          <Text>Hello</Text>
+          <TouchableOpacity onPress={showAlert}>
+            <Text>Show</Text>
+          </TouchableOpacity>
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -64,9 +68,11 @@ const App: () => ReactNode = () => {
 };
 
 const styles = StyleSheet.create({
-  sectionContainer: {
+  container: {
     marginTop: 32,
+    flex: 1,
     paddingHorizontal: 24,
+    backgroundColor: 'red',
   },
   sectionTitle: {
     fontSize: 24,
