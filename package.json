@@ -2,9 +2,15 @@
   "name": "Shopping_App",
   "version": "0.0.1",
   "private": true,
+  "rnpm": {
+    "assets": [
+      "./src/assets/fonts"
+    ]
+  },
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
+    "genimg": "node genimg src/assets/images --output src/res/images.tsx --name images",
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",

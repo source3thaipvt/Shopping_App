@@ -6,11 +6,13 @@
  * @flow strict-local
  */
 import fonts from '../res/fonts';
+import images from '../res/images';
 import React, {FC} from 'react';
 import type {ReactNode} from 'react';
 import {
   Alert,
   Button,
+  Image,
   SafeAreaView,
   ScrollView,
   StatusBar,
@@ -63,6 +65,13 @@ const App: () => ReactNode = () => {
             }}>
             The are fonts
           </Text>
+          <Image
+            source={images.bg_scan3x}
+            style={{
+              resizeMode: 'cover',
+              width: '90%',
+              height: 400,
+            }}></Image>
         </View>
       </ScrollView>
     </SafeAreaView>
