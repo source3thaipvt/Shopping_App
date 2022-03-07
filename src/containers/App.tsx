@@ -5,7 +5,7 @@
  * @format
  * @flow strict-local
  */
-
+import fonts from '../res/fonts';
 import React, {FC} from 'react';
 import type {ReactNode} from 'react';
 import {
@@ -57,10 +57,12 @@ const App: () => ReactNode = () => {
         style={backgroundStyle}>
         <View style={[styles.container, backgroundStyle]}>
           <SplashScreen />
-          <Text>Hello</Text>
-          <TouchableOpacity onPress={showAlert}>
-            <Text>Show</Text>
-          </TouchableOpacity>
+          <Text
+            style={{
+              fontFamily: fonts.Helveticaneu700,
+            }}>
+            The are fonts
+          </Text>
         </View>
       </ScrollView>
     </SafeAreaView>
