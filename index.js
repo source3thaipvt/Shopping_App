@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 /**
  * @format
  */
@@ -7,4 +8,4 @@ import App from './src/containers/App';
 import Test from './src/containers/testLibary';
 import {name as appName} from './app.json';
 
-AppRegistry.registerComponent(appName, () => Test);
+AppRegistry.registerComponent(appName, () => App);
