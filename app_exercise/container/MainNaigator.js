@@ -16,8 +16,7 @@ const Stack = createStackNavigator();
 const StackNavigator = () => {
   return (
     <Stack.Navigator
-      initialRouteName={'ExercisesHomeScreen'}
-      headerMode="none">
+      initialRouteName={'ExercisesHomeScreen'}>
       <Stack.Screen
         name="ExercisesHomeScreen"
         component={ExerciseHomeScreen}
@@ -41,6 +40,7 @@ const BottomTabNavigator = () => {
       }}
       initialRouteName="AllExercises"
       screenOptions={({route}) => ({
+        headerShown: false,
         tabBarIcon: ({focused}) => {
           const icons = {
             Schedule: 'calendar-alt',
@@ -87,6 +87,9 @@ const BottomTabNavigator = () => {
       <Tab.Screen
         name="AllExercises"
         component={StackNavigator}
+        screenOptions={{
+          headerShown: false,
+        }}
       />
       <Tab.Screen
         name="Settings"

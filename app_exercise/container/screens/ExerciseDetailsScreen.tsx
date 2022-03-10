@@ -7,6 +7,7 @@ import {
   Image,
   TextInput,
   FlatList,
+  ScrollView,
 } from 'react-native';
 import FontAwesome5Icons from 'react-native-vector-icons/FontAwesome5';
 import {COLORS, SIZES} from '../../contants';
@@ -74,114 +75,117 @@ const ExerciseDetailsScreen = ({route}: any) => {
         barStyle={'dark-content'}
         animated={true}
       />
-      <View
-        style={{
-          width: '100%',
-          height: 0.4 * SIZES.height,
-          padding: 30,
-          backgroundColor: '#C7B8F5',
-          position: 'relative',
-        }}>
-        <Image
-          source={require('../assets/images/BgPurple.png')}
-          style={{
-            position: 'absolute',
-            top: 60,
-            left: -50,
-          }}
-        />
-        <Text style={{fontSize: 30, lineHeight: 45}}>
-          {exercise.title}
-        </Text>
-        <Text
-          style={{
-            fontSize: 16,
-            opacity: 0.6,
-            marginVertical: 10,
-          }}>
-          {exercise.duration}
-        </Text>
-        <Text style={{fontSize: 16, width: '85%'}}>
-          {exercise.subTitle}
-        </Text>
+      <ScrollView>
         <View
           style={{
-            flexDirection: 'row',
-            alignItems: 'center',
-            justifyContent: 'flex-start',
-            backgroundColor: COLORS.white,
-            width: '60%',
-            height: 50,
-            borderRadius: 25,
-            marginVertical: 30,
+            width: '100%',
+            height: 0.4 * SIZES.height,
+            padding: 30,
+            backgroundColor: '#C7B8F5',
+            position: 'relative',
           }}>
-          <FontAwesome5Icons
-            name="search"
-            size={22}
+          <Image
+            source={require('../../assets/images/BgPurple.png')}
             style={{
-              marginHorizontal: 20,
+              position: 'absolute',
+              top: 60,
+              left: -50,
             }}
           />
-          <TextInput
-            placeholder="Search"
-            style={{flex: 1}}
-          />
-        </View>
+          <Text style={{fontSize: 30, lineHeight: 45}}>
+            {exercise.title}
+          </Text>
+          <Text
+            style={{
+              fontSize: 16,
+              opacity: 0.6,
+              marginVertical: 10,
+            }}>
+            {exercise.duration}
+          </Text>
+          <Text style={{fontSize: 16, width: '85%'}}>
+            {exercise.subTitle}
+          </Text>
+          <View
+            style={{
+              flexDirection: 'row',
+              alignItems: 'center',
+              justifyContent: 'flex-start',
+              backgroundColor: COLORS.white,
+              width: '60%',
+              height: 50,
+              borderRadius: 25,
+              marginVertical: 30,
+            }}>
+            <FontAwesome5Icons
+              name="search"
+              size={22}
+              style={{
+                marginHorizontal: 20,
+              }}
+            />
+            <TextInput
+              placeholder="Search"
+              style={{flex: 1}}
+            />
+          </View>
 
-        <Image
-          source={exercise.image}
-          style={{
-            position: 'absolute',
-            bottom: 40,
-            right: -130,
-            width: 350,
-            height: 350,
-            resizeMode: 'contain',
-          }}
-        />
-      </View>
-
-      <View style={{marginTop: -30, marginHorizontal: 30}}>
-        <FlatList
-          data={sessions_data}
-          contentContainerStyle={{
-            alignItems: 'center',
-          }}
-          showsVerticalScrollIndicator={false}
-          numColumns={2}
-          keyExtractor={item => item}
-          renderItem={({item, index}) => (
-            <SessionItem session={item} index={index} />
-          )}
-        />
-        <Text style={{marginVertical: 15, fontSize: 20}}>
-          {exercise.title}
-        </Text>
-        <View
-          style={{
-            flexDirection: 'row',
-            alignItems: 'center',
-            justifyContent: 'flex-start',
-            backgroundColor: COLORS.white,
-            borderRadius: 15,
-            padding: 15,
-            shadowColor: '#9e9898',
-            elevation: 5,
-          }}>
           <Image
             source={exercise.image}
             style={{
-              width: 80,
-              height: 60,
-              resizeMode: 'center',
+              position: 'absolute',
+              bottom: 40,
+              right: -130,
+              width: 350,
+              height: 350,
+              resizeMode: 'contain',
             }}
           />
-          <View>
-            <Text>Basic 2</Text>
-            <Text>Start your deepen you practice</Text>
+        </View>
+
+        <View
+          style={{marginTop: -30, marginHorizontal: 30}}>
+          <FlatList
+            data={sessions_data}
+            contentContainerStyle={{
+              alignItems: 'center',
+            }}
+            showsVerticalScrollIndicator={false}
+            numColumns={2}
+            keyExtractor={item => item}
+            renderItem={({item, index}) => (
+              <SessionItem session={item} index={index} />
+            )}
+          />
+          <Text style={{marginVertical: 15, fontSize: 20}}>
+            {exercise.title}
+          </Text>
+          <View
+            style={{
+              flexDirection: 'row',
+              alignItems: 'center',
+              justifyContent: 'flex-start',
+              backgroundColor: COLORS.white,
+              borderRadius: 15,
+              padding: 15,
+              shadowColor: '#9e9898',
+              elevation: 5,
+            }}>
+            <Image
+              source={exercise.image}
+              style={{
+                width: 80,
+                height: 60,
+                resizeMode: 'center',
+              }}
+            />
+            <View>
+              <Text>Basic 2</Text>
+              <Text>Start your deepen you practice</Text>
+            </View>
           </View>
         </View>
-      </View>
+      </ScrollView>
     </SafeAreaView>
   );
 };
