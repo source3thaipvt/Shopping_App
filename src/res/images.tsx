@@ -4,9 +4,16 @@
 */
 
 const images = {
+    BgOrange: require('../assets/images/BgOrange.png'),
+    BgOvalShape: require('../assets/images/BgOvalShape.png'),
+    BgPurple: require('../assets/images/BgPurple.png'),
     bg_scan: require('../assets/images/bg_scan.png'),
     bg_scan2x: require('../assets/images/bg_scan2x.png'),
     bg_scan3x: require('../assets/images/bg_scan3x.png'),
+    Exercise1: require('../assets/images/Exercise1.png'),
+    Exercise2: require('../assets/images/Exercise2.png'),
+    Exercise3: require('../assets/images/Exercise3.png'),
+    Exercise4: require('../assets/images/Exercise4.png'),
     fr_chai: require('../assets/images/fr_chai.png'),
     fr_chai2x: require('../assets/images/fr_chai2x.png'),
     fr_chai3x: require('../assets/images/fr_chai3x.png'),
@@ -97,5 +104,6 @@ const images = {
     logo: require('../assets/images/logo.png'),
     logo2x: require('../assets/images/logo2x.png'),
     logo3x: require('../assets/images/logo3x.png'),
+    maxresdefault: require('../assets/images/maxresdefault.jpg'),
 }
 export default images

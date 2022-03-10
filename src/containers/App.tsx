@@ -73,6 +73,7 @@ const App: () => ReactNode = () => {
               resizeMode: 'cover',
               width: '90%',
               height: 400,
+              overlayColor: 'rgba(69,85,117,0.7)',
             }}></Image>
         </View>
       </ScrollView>
